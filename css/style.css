@@ -20,6 +20,16 @@ a {
 h1, h2, h3, p, li{
     padding: 0.625rem;/*10 px*/
 }
+.hamMenuToggle {
+    display: none;
+}
+.hamMenuLine{
+    height: 0.13rem;
+    width: 1.4rem;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 header{
     display: flex; /* Make it a flex container */
     justify-content: space-between;
@@ -27,8 +37,8 @@ header{
     padding: 1rem 2rem;
     background-color:  #051022;
     position: fixed;
-    top: 0;/*remove themis two lines if problem arise*/
-    left: 0;
+    /*top: 0;!*remove themis two lines if problem arise*!*/
+    /*left: 0;*/
     width: 100%;
     height: 3.8rem;
     z-index: 1000;
@@ -124,33 +134,50 @@ footer a {
 
 /*experimental*/
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack the title bar and buttons vertically */
-        align-items: flex-start;
-        padding: 10px;
+    .hamMenuToggle {
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        height: 1.4rem;
+        width: 1.4rem;
+        padding: 0;
     }
 
     #titleBarButtons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        width: 100%;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3.75rem;
+        right: 0.625rem;
+        background: #051022;
+        border-radius: 0.313rem;
+        padding: 0.625rem;
     }
+
+    #titleBarButtons.visible {
+        display: flex;
+    }
+    .hamMenuToggle.active .hamMenuLine:nth-child(1) { transform: translate(0, 0.65rem) rotate(45deg); }
+    .hamMenuToggle.active .hamMenuLine:nth-child(2) { opacity: 0; }
+    .hamMenuToggle.active .hamMenuLine:nth-child(3) { transform: translate(0, -0.65rem) rotate(-45deg); }
 
     .contentTray {
         width: 90%; /* Make the content containers smaller */
         height: auto; /* Let the height adjust automatically */
-        padding: 10px;
+        padding: 0.625rem;
     }
 
     #homeContentTrayImg {
-        height: 200px;
-        width: 220px;
+        height: 12.5rem;
+        width: 13.75rem;
     }
 
     .skillCard {
-        height: 200px;
-        width: 150px;
+        height: 12.5rem;
+        width: 9.375rem;
         font-size: medium;
     }
 
@@ -166,7 +193,7 @@ footer a {
 @media (max-width: 480px) {
     header a {
         font-size: medium; /* Reduce button font size */
-        padding: 5px 10px;
+        padding: 0.313rem 0.625rem;
     }
 
     #homeContentTrayText {

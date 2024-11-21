@@ -13,3 +13,9 @@ $(document).ready(function(){
         }
     });
 });
+function toggleMenu() {
+    const menu = document.getElementById('titleBarButtons');
+    const hamMenu = document.querySelector('.hamMenuToggle');
+    menu.classList.toggle('visible');
+    hamMenu.classList.toggle('active');
+}

@@ -15,12 +15,17 @@
     <div id="titleBarHome">
         <a href="" class="buttons">Tahir</a>
     </div>
-    <div id="titleBarButtons">
-        <a href="#Home" class="buttons">Home</a>
-        <a href="#about" class="buttons">About Me</a>
-        <a href="#weather" class="buttons">Weather</a>
-        <a href="#skills" class="buttons">Skills</a>
-        <a href="#contacts_section" class="buttons">Contact</a>
+    <button class="hamMenuToggle" onclick="toggleMenu()">
+        <span class="hamMenuLine"></span>
+        <span class="hamMenuLine"></span>
+        <span class="hamMenuLine"></span>
+    </button>
+    <div id="titleBarButtons" class="hidden">
+        <a href="#Home" class="buttons" onclick="toggleMenu()">Home</a>
+        <a href="#about" class="buttons" onclick="toggleMenu()">About Me</a>
+        <a href="#weather" class="buttons" onclick="toggleMenu()">Weather</a>
+        <a href="#skills" class="buttons" onclick="toggleMenu()">Skills</a>
+        <a href="#contacts_section" class="buttons" onclick="toggleMenu()">Contact</a>
     </div>
 </header>
 <div id ="Home" class = "scrollable_section">
