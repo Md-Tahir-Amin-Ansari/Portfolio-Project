@@ -1,7 +1,7 @@
 *{
     margin: 0;
     box-sizing: border-box;
-    font-family: Consolas, Inconsolata, monospace;
+    font-family: Consolas, Inconsolata,monaco, monospace;
     list-style-type: none;
 }
 html{
