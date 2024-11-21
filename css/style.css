@@ -1,178 +1,183 @@
 *{
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: consolas, serif;
+    list-style-type: none;
 }
-
-html {
+html{
     background: url('https://wallpaper.dog/large/973643.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100%;
+    font-size: 16px; /* Establishes 1rem = 16px */
 }
-
-body {
-    margin: 0;
-    padding: 0;
+body{
     background: none;
 }
-#titlebar{
-    position: fixed;
-    background-color:  #051022;
-    width: 100%;
-    height: 60px;
-    padding: 18px;
-    display: flex; /* Make it a flex container */
-    justify-content: space-between; /* Align items to the space between */
-    align-items: center;
-    z-index: 1000; 
-   
-}
-#titlebar_buttons .buttons,#titlebar_home .buttons{/* to target inside the div use space*/
-    color: #CCCCCC;
-    background-color: transparent;
+a {
     text-decoration: none;
-    font-weight: bolder;
-    font-size: larger;
-    /*width: fit-content;*/
-    /*height: fit-content;*/
-    padding: 7px;
-    margin: 4px;
+    color: inherit;
 }
-
-#image_home{
-    position: relative;
+h1, h2, h3, p, li{
+    padding: 0.625rem;/*10 px*/
+}
+header{
+    display: flex; /* Make it a flex container */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color:  #051022;
+    position: fixed;
+    top: 0;/*remove themis two lines if problem arise*/
+    left: 0;
     width: 100%;
-    height: 557px;
-    object-fit: cover;
-
+    height: 3.8rem;
+    z-index: 1000;
 }
-img{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-#home{
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
-    height: 70%;
-    width: 70%;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    font-size:xx-large;
-    font-weight:bolder;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-}
-#home .intro{
-    padding: 15px 15px 15px 50px;
-}
-#home img{
-    /* object-fit:scale-down; */
-    height: 300px;
-    width: 300px;
-    right: 70px;
-    bottom: 40px;
-}
-.subsec{
-    left: 5%;
-    position: relative;
-    width: 100%;
-    height: 557px;
-    object-fit: cover;
-    color: rgba(255, 255, 255);
-    font-size:xx-large;
-    padding: 10%;
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-
-}
-.subsec .about{
-    padding: 10px;
-}
-.subsec:hover{
-    opacity: 1;
-
-}
-
-#skills{
-    position: relative;
-}
-#problem_solving{
+header a {
+    color: #fff;
+    padding: 0.433rem 0.725rem;
+    border-radius: 0.308rem;
+    transition: background 0.3s;
     font-size: x-large;
-    position: absolute;
-    height: 225px;
-    width: 180px;
-    top: 20%;
-    right: 50%;
+    font-weight: bolder;
+}
+
+header a:hover {
+    background-color: #555;
+}
+/*Rest of the main content*/
+.scrollable_section {
+    padding: 3.75rem 1.25rem 0.625rem; /* Adds spacing below the fixed menu */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:xx-large; /*change here*/
+    font-weight:bolder;
+    flex-wrap: wrap;
+}
+.contentTray{
+    background-color: rgba(255, 255, 255, 0.58);
+    min-height: 25rem;
+    min-width: 80%;
+    border-radius: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    /*font-size:xx-large; !*change here*!*/
+    /*font-weight:bolder;*/
+    color: black;
+    /*    temp*/
+    flex-wrap: wrap;
+}
+.contentTrayTransparent{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+#homeContentTrayText{
+    flex: 1.35;
+    padding: 1.25rem;
+}
+#homeContentTrayImg{/*image inside img>contentTray>scrollableSection*/
+    flex: 0.65;
+    height: 17.5rem;
+    width: 18.75rem;
+}
+/*skill section*/
+#skillsContentTray h2{
+    margin: 1.25rem;
+}
+.skillCard{
+    display: flex;
+    margin: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    height: 21rem;
+    width: 15rem;
     background-color: black;
     color: white;
-    text-align: center;
-    padding-top: 5%;
+    font-size: x-large;
     transition: transform 0.1s, box-shadow 0.1s;
 }
-#team_work{
-    font-size: x-large;
-    position: absolute;
-    height: 225px;
-    width: 180px;
-    top: 20%;
-    right: 30%;
+.skillCardWhiteCard{
     background-color: white;
     color: black;
-    text-align: center;
-    padding-top: 5%;
-    transition: transform 0.1s, box-shadow 0.1s;
 }
-#programming_proficiency{
-    font-size: x-large;
-    position: absolute;
-    height: 225px;
-    width: 180px;
-    top: 20%;
-    right: 10%;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding-top: 5%;
-    transition: transform 0.1s, box-shadow 0.1s;
-}
-#programming_proficiency:hover {
+.skillCard:hover{
     transform: scale(1.1); /* Enlarge the element on hover */
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); /* Add a box shadow on hover for a raised effect */
 }
-#team_work:hover {
-    transform: scale(1.1); /* Enlarge the element on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 1); /* Add a box shadow on hover for a raised effect */
-}
-#problem_solving:hover {
-    transform: scale(1.1); /* Enlarge the element on hover */
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); /* Add a box shadow on hover for a raised effect */
-}
-#contacts-bar{
+/*footer*/
+footer {
+    padding: 1.25rem;
     background-color: black;
-    position: absolute;
-    width: 100%;
-    height: 300px;
-}
-.contacts {
-    position: absolute;
     color: white;
-    top: 10%;
-    left: 10%;
+    font-size:x-large; /*change here*/
+    font-weight:bolder;
 }
-.contacts-list {
-    position: absolute;
-    top: 25%;
-    left: 15%;
-}
-.contacts-list li{
-    padding: 10%;
-}
-.contacts-list a{
+
+footer a {
     color: white;
-    font-size: x-large;
+    margin: 0 10px;
+}
+
+/*experimental*/
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the title bar and buttons vertically */
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    #titleBarButtons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .contentTray {
+        width: 90%; /* Make the content containers smaller */
+        height: auto; /* Let the height adjust automatically */
+        padding: 10px;
+    }
+
+    #homeContentTrayImg {
+        height: 200px;
+        width: 220px;
+    }
+
+    .skillCard {
+        height: 200px;
+        width: 150px;
+        font-size: medium;
+    }
+
+    footer {
+        font-size: medium;
+    }
+
+    .buttons {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 480px) {
+    header a {
+        font-size: medium; /* Reduce button font size */
+        padding: 5px 10px;
+    }
+
+    #homeContentTrayText {
+        font-size: medium;
+    }
+
+    footer a {
+        font-size: small;
+    }
+
+    .contacts {
+        font-size: large;
+    }
 }

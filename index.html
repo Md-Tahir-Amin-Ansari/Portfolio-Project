@@ -10,57 +10,68 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <!-- Your website content goes here -->
-    <div id="titlebar">
-        <div id="titlebar_home">
-            <a href="" class="buttons">Tahir</a>
+<!-- Your website content goes here -->
+<header id="titleBar">
+    <div id="titleBarHome">
+        <a href="" class="buttons">Tahir</a>
+    </div>
+    <div id="titleBarButtons">
+        <a href="#Home" class="buttons">Home</a>
+        <a href="#about" class="buttons">About Me</a>
+        <a href="#weather" class="buttons">Weather</a>
+        <a href="#skills" class="buttons">Skills</a>
+        <a href="#contacts_section" class="buttons">Contact</a>
+    </div>
+</header>
+<div id ="Home" class = "scrollable_section">
+    <div id="homeContentTray" class="contentTray">
+        <div id="homeContentTrayText">
+            <p>Hello!</p>
+            <p>I am...</p>
+            <p>Md. Tahir Amin Ansari</p>
+            <p>...a Computer Science Graduate</p>
         </div>
-        <div id="titlebar_buttons">
-            <a href="#image_home" class="buttons">Start</a>
-            <a href="#about" class="buttons">About Me</a>
-            <a href="#weather" class="buttons">Weather</a>
-            <a href="#skills" class="buttons">Skills</a>
-            <a href="#contacts-bar" class="buttons">Contact</a>
+        <img id="homeContentTrayImg" src="images/icon.webp" alt="developer">
+    </div>
+</div>
+<div id ="about" class="scrollable_section">
+    <div id="aboutContentTray" class="contentTray contentTrayTransparent">
+        <div>
+            <p>I am a Fresher</p>
+            <p>...with knowledge of HTML ,CSS ,and Javascript</p>
+            <p>...as well as Python, Java and SQL</p>
         </div>
     </div>
-    <div id="image_home">
-        <div id="home">
-            <p class="intro" >Hello!</p>
-            <p class="intro">I am...</p>
-            <p class="intro">Md. Tahir Amin Ansari</p>
-            <p class="intro">...a Computer Science Graduate</p>
-            <img src="images/icon.png" alt="developer">
+</div>
+<div id="weather" class="scrollable_section">
+    <div id="weatherContentTray" class="contentTray">
+
+    </div>
+</div>
+<div id="skills" class="scrollable_section">
+    <div id="skillsContentTray" class="contentTray contentTrayTransparent">
+        <h2>Skills</h2>
+        <div class="skillCard">
+            <h4>Problem<br>Solving</h4>
         </div>
-    </div>
-    <div id="about" class="subsec">
-            <p class="about">I am a Fresher</p>
-            <p class="about">...with knowledge of HTML ,CSS ,and Javascript</p>
-            <p class="about">...as well as Python, Java and SQL</p>
-    </div>
-    <div id="weather">
-    </div>
-    <div id="skills" class="subsec">
-        <p class="about"><h2>Skills</h2></p>
-        <div id="problem_solving">
-            <h4>Problem Solving</h4>
-        </div>
-        <div id="team_work">
+        <div class="skillCard skillCardWhiteCard">
             <h4>Team<br>Work</h4>
         </div>
-        <div id="programming_proficiency">
+        <div class="skillCard">
             <h4>Programming<br>Proficiency</h4>
         </div>
     </div>
-    <div id="contacts-bar">
-        <h1 class="contacts">Contacts</h1>
-            <div>
-                <ul class="contacts-list">
-                    <li><a href="https://www.google.com">E-mail</a></li>
-                    <li><a href="https://www.google.com">Whatsapp</a></li>
-                    <li><a href="https://www.google.com">Linkedin</a></li>
-                    <li><a href="https://www.google.com">Github</a></li>
-                </ul>
-            </div>
+</div>
+<footer id="contacts_section">
+    <h1 class="contacts">Contacts</h1>
+    <div>
+        <ul class="contacts-list">
+            <li><a class="buttons" href="https://www.google.com">E-mail</a></li>
+            <li><a class="buttons" href="https://www.google.com">Whatsapp</a></li>
+            <li><a class="buttons" href="https://www.google.com">Linkedin</a></li>
+            <li><a class="buttons" href="https://www.google.com">Github</a></li>
+        </ul>
     </div>
+</footer>
 </body>
 </html>
