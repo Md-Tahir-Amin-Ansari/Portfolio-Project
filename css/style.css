@@ -90,6 +90,45 @@ header a:hover {
     height: 17.5rem;
     width: 18.75rem;
 }
+/*Weather Module*/
+.weatherContentTrayGrid {
+    font-size: x-large;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(6, 0.8fr);
+    gap: 1rem;
+}
+.grid-item {
+    padding: 1rem;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 0.875rem;
+}
+.grid-item.item2 {
+    grid-column: 3;
+}
+
+    /* Make Item 3 span across all columns */
+.grid-item.item3 {
+    /* font-size: clamp(4rem, 8rem, 10rem); */
+    font-size: 10rem;
+    grid-column: 1 /-1;
+    grid-row: span 3;
+
+}
+.smallCards:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    filter: invert(1);
+    background-color: white;
+}
+
 /*skill section*/
 #skillsContentTray h2{
     margin: 1.25rem;
@@ -105,6 +144,7 @@ header a:hover {
     color: white;
     font-size: x-large;
     transition: transform 0.1s, box-shadow 0.1s;
+    border-radius: 0.875rem;
 }
 .skillCardWhiteCard{
     background-color: white;
@@ -166,6 +206,27 @@ footer {
         height: 12.5rem;
         width: 13.75rem;
     }
+    /*weather module*/
+    .weatherContentTrayGrid {
+        grid-template-columns: 1fr 1fr; /* 2 columns in portrait */
+        grid-template-rows:repeat(7, 0.8fr);
+    }
+    .grid-item.item1{
+        grid-column:1
+    }
+    .grid-item.item2{
+        grid-column:2;
+    }
+    .smallCards:nth-child(even){
+        grid-column:1;
+    }
+    .smallCards:nth-child(odd){
+        grid-column:2;
+    }
+    .grid-item.item3{
+        font-size: 8rem;
+    }
+    /*weather module*/
 
     .skillCard {
         height: 12.5rem;
@@ -191,6 +252,30 @@ footer {
     #homeContentTrayText {
         font-size: medium;
     }
+    /*weather module*/
+    .weatherContentTrayGrid {
+        grid-template-columns: 1fr; /* 2 columns in portrait */
+        grid-template-rows:repeat(8, 0.4fr);
+        gap: 0.5rem;
+        font-size: large;
+    }
+    .smallCards:nth-child(odd){
+        grid-column:1;
+    }
+
+    .grid-item.item2{
+        grid-column:1;
+    }
+    .grid-item.item3{
+        font-size: 4rem;
+    }
+    .smallCards:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        filter: invert(1);
+        background-color: white;
+    }
+    /*weather module*/
 
     footer a {
         font-size: small;
