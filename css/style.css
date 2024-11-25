@@ -5,7 +5,7 @@
     list-style-type: none;
 }
 html{
-    background: url('https://wallpaper.dog/large/973643.jpg') no-repeat center center fixed;
+    background: url('../images/bg.webp') no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     font-size: 16px; /* Establishes 1rem = 16px */
@@ -249,8 +249,8 @@ footer {
         padding: 0.313rem 0.625rem;
     }
 
-    #homeContentTrayText {
-        font-size: medium;
+    .scrollable_section {
+        font-size: large;
     }
     /*weather module*/
     .weatherContentTrayGrid {
@@ -278,7 +278,7 @@ footer {
     /*weather module*/
 
     footer a {
-        font-size: small;
+        font-size: medium;
     }
 
     .contacts {
