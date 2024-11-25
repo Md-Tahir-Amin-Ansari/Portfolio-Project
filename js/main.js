@@ -128,27 +128,29 @@ function updateWeatherUI(data) {
     document.getElementById('timeDate').innerHTML = formatDate(date);
 }
 //experiment here
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {//execute this when DOM is fully loaded
     const locationCacheKey = 'userLocation';
-    const locationCacheTTL = 15 * 60 * 1000; // Cache location for 15 minutes
-
-    function getLocation() {
+    const locationCacheTTL = 15 * 60 * 1000; // Cache location for 15 minutes i.e. cache expiry limit
+    //TODO: clear this part
+    //this part is not clear
+    function getLocation() {//gets location using geolocation api
         return new Promise((resolve, reject) => {
-            const cachedLocation = localStorage.getItem(locationCacheKey);
-            const now = Date.now();
+            const cachedLocation = localStorage.getItem(locationCacheKey);//search and retrieve cache named 'userLocation'
+            const now = Date.now();//gets the current time to validate the freshness of the cache
 
-            if (cachedLocation) {
-                const { timestamp, coords } = JSON.parse(cachedLocation);
-                if (now - timestamp < locationCacheTTL) {
+            if (cachedLocation) {//if there already exist a cache i.e. if it is not the first time
+                const { timestamp, coords } = JSON.parse(cachedLocation);// we get coordinates and timestamp
+                if (now - timestamp < locationCacheTTL) {// checks if cache hasn't expired yet by subtracting current time with the time when cache was created
                     console.log('Using cached location.');
                     resolve(coords);
-                    return;
+                    return;// explicit return to avoid any accidental failure
                 }
             }
 
             // If no valid cache, get the location
+            // this function has two callbacks: first is if it is success & second for failure
             navigator.geolocation.getCurrentPosition(
-                (location) => {
+                (location) => {//success callback function
                     const { latitude, longitude } = location.coords;
                     console.log('Fetched new location:', latitude, longitude);
 
@@ -160,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     resolve({ latitude, longitude });
                 },
+                // error callback
                 () => {
                     document.getElementById('weatherContentTray').textContent = 'Failed to load weather data. Please enable location.';
                     reject(new Error('Location not available'));
