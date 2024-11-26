@@ -16,8 +16,11 @@ $(document).ready(function(){
 function toggleMenu() {
     const menu = document.getElementById('titleBarButtons');
     const hamMenu = document.querySelector('.hamMenuToggle');
+    const menuOverlay = document.getElementById('menuOverlay');
     menu.classList.toggle('visible');
     hamMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('visible');
+
 }
 // a function to convert degrees to direction
 function degreesToDirection(degrees) {
