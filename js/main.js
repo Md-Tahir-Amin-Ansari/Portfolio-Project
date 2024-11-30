@@ -30,6 +30,8 @@ function degreesToDirection(degrees) {
 }
 // a function to format time and date to a format like this: 22 jan 2024 04:32 PM
 function formatDate(date) {
+    // Uses International datetime API
+    // syntax : Intl.DateTimeFormat(locales,options).format(date)
     return new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
         month: 'short',
@@ -206,15 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Unified cache check and fetch logic
     async function getUnifiedData() {
-        const cachedData = localStorage.getItem(unifiedCacheKey);
-        const now = Date.now();
+        const cachedData = localStorage.getItem(unifiedCacheKey);// gets cache from local storage
+        const now = Date.now();// gets the current time
 
-        if (cachedData) {
+        if (cachedData) {// this will not run when the page is loaded after for the first time in a while
             const { timestamp, location, weather, city } = JSON.parse(cachedData);
-            if (now - timestamp < cacheTTL) {
+            if (now - timestamp < cacheTTL) {// see if the elapsed time exceeds the limit set(15 minutes)
                 console.log('Using cached data.');
                 updateWeatherUI(weather);
-                updateCityUI(city); // Optional, if city needs separate UI updates
+                updateCityUI(city); // updates city name
                 return location; // Return cached location for further use
             }
         }
