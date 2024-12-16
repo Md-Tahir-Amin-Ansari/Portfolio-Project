@@ -216,7 +216,6 @@ footer {
         color: #E2E8F0;
         /*change here*/
         border-radius: 0.313rem;
-        padding: 0.625rem;
         overflow: hidden;
         transition: height 0.7s ease, visibility 0s linear 0.7s; /* Smooth transitions */
     }
